@@ -15,23 +15,28 @@ public class SurveyApi {
     SurveyService surveyService;
 
     @GetMapping("/all")
-    public RequestMapping getAllSurveys(){
-        return RequestStatus.ok(surveyService.getAllSurveys());       
+    public ResponseEntity<List<Survey>> getAllSurveys(){
+        return ResponseEntity.ok(surveyService.getAllSurveys());       
+    }
+
+    @GetMapping("/survey{id}")
+    public ResponseEntity<Survey> getSurveyById(@param String id){
+        return ResponseStatus.ok(surveyService.getSurveyById(id));
     }
 
     @PostMapping("/createSurvey")
-    public RequestMapping createSurvey(RequestBody Survey survey){
-        return RequestStatus.created(surveyService.createSurvey(survey));
+    public ResponseEntity createSurvey(RequestBody Survey survey){
+        return ResponseStatus.created(surveyService.createSurvey(survey));
     }
 
     @PutMapping("/updateSurvey")
-    public RequestMapping updateSurvey(RequestBody Survey survey){
-        return RequestStatus.ok(surveyService.updateSurvey(survey));
+    public ResponseEntity<Survey> updateSurvey(RequestBody Survey survey){
+        return ResponseEntity.ok(surveyService.updateSurvey(survey));
     }
 
     @DeleteMapping("/deleteSurvey")
-    public RequestMapping deleteSurvey(RequestBody Survey survey){
-        return RequestStatus.ok(surveyService.deleteSurvey(survey));
+    public ResponseEntity deleteSurvey(RequestBody Survey survey){
+        return ResponseEntity.ok(surveyService.deleteSurvey(survey));
     }
     
 }
