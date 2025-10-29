@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.yordanos_bekele.springassignment.Entity.SurveyRequest;
 import com.yordanos_bekele.springassignment.dto.SurveyReposeDto;
+import com.yordanos_bekele.springassignment.dto.SurveyRequestDto;
 import com.yordanos_bekele.springassignment.service.SurveyRequestService;
 
 import jakarta.validation.Valid;
@@ -23,7 +24,7 @@ public class SurveyController {
     }
 
     @PostMapping
-    public ResponseEntity<SurveyReposeDto> createSurvey(@Valid @RequestBody SurveyRequest request){
+    public ResponseEntity<SurveyReposeDto> createSurvey(@Valid @RequestBody SurveyRequestDto request){
         SurveyReposeDto response = surveyRequestService.createSurvey(request);
         return ResponseEntity.ok(response);
     }
