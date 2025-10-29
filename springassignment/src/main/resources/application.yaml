@@ -1,3 +1,15 @@
 spring:
   application:
     name: springassignment
+  datasource:
+    url: jdbc:postgresql://localhost:5432/survey_request   
+    username: etech                       
+    password: survey_request                            
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update                          
+    show-sql: true                             
+    properties:
+      hibernate:
+        format_sql: true
