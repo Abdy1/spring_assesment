@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/survey_request   
     username: etech                       
-    password: survey_request                            
+    password: etech                            
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:

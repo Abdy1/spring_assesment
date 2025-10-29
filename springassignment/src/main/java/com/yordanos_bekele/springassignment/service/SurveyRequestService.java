@@ -3,6 +3,7 @@ package com.yordanos_bekele.springassignment.service;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
@@ -34,6 +35,10 @@ public class SurveyRequestService {
     }
     public List<SurveyRequest> getAllSurveys() {
         return repository.findAll();
+    }
+     public Optional<SurveyReposeDto> getSurveyById(UUID id) {
+        Optional<SurveyRequest> surveyUpdated = repository.findById(id);
+        return surveyUpdated.map(surveyMapper::toResponse);
     }
     public void deleteSurvey(UUID id) {
         if (!repository.findById(id).isPresent()) {
