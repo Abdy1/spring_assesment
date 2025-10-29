@@ -3,7 +3,7 @@ spring:
     name: springassignment
   datasource:
     url: jdbc:postgresql://localhost:5432/survey_request   
-    username: etech                       
+    username: etech # database username from local because i have no time to set env variable and not to throw an error                       
     password: etech                            
     driver-class-name: org.postgresql.Driver
   jpa:
